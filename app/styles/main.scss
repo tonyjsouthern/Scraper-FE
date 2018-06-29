@@ -1,0 +1,106 @@
+// bower:scss
+// endbower
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+html {
+    background-color: #00d1b2 !important;
+    height: 100%;
+}
+
+
+
+body {
+  background-color: #00d1b2;
+  height: 100%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+.hero-unit {
+  margin: 50px auto 0 auto;
+  width: 300px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  background-color: #eee;
+  border-radius: 6px;
+  padding: 60px;
+  h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.is-bold {
+  font-weight: bold;
+  margin-bottom: 2px !important;
+}
+
+.cont {
+  margin: 20px auto;
+  width: 1000px;
+}
+
+.input-cont {
+  text-align: center;
+}
+
+.title {
+  margin-top: 10px;
+}
+
+.button {
+margin-top: 10px;
+}
+
+
+.faq {
+  color: #209cee;
+  cursor: pointer;
+}
+
+.results-cont {
+  margin: 20px auto;
+  width: 1000px;
+}
+
+.false {
+    background-color: #ff3860;
+    color: white;
+    padding: 0px 8px 0px 8px;
+    width: 48px;
+    border-radius: 4px;
+      margin-bottom: 2px;
+}
+
+.true {
+    background-color: #23d160;
+    color: white;
+    padding: 0px 8px 0px 10px;
+    width: 48px;
+    border-radius: 4px;
+    margin-bottom: 2px;
+}
+
+.companies {
+  display: inline-block;
+}
+
+.values-cont {
+  display: inline-block;
+}
+
+.margin-bot {
+  margin-bottom: 2px;
+}
