@@ -56,7 +56,11 @@ body {
   text-align: center;
 }
 
-.title {
+input {
+  width: 75% !important;
+}
+
+.title-margin {
   margin-top: 10px;
 }
 
@@ -103,4 +107,14 @@ margin-top: 10px;
 
 .margin-bot {
   margin-bottom: 2px;
+}
+
+.margin-top {
+  margin-top: 10px;
+}
+
+.centered {
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
 }

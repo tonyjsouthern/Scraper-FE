@@ -37,7 +37,6 @@ function responseHandler (response) {
   results.marketo         = data.marketo;
   results.pardot          = data.pardot;
   results.sf              = data.sf;
-  $('.results-cont').removeClass("hidden")
   $('.results-cont').html(htmlTemplate())
   checkTf();
 }
