@@ -81,3 +81,18 @@ function htmlTemplate () {
   `
 }
 // http://iheartcamo.com
+
+
+// FAQ activation
+
+$('.faq').on("click", function () {
+  $('.modal').addClass("is-active");
+})
+
+$('.modal-background').on("click", function () {
+  $('.modal').removeClass("is-active");
+})
+
+$('.delete').on("click", function () {
+  $('.modal').removeClass("is-active");
+})
