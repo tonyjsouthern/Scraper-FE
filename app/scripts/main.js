@@ -1,5 +1,3 @@
-let value;
-
 let results = {
   site: '',
   actOn: '',
@@ -11,49 +9,57 @@ let results = {
   hubspot: ''
 }
 
-$('.submit').on("click", function () {
-  value = $('.input').val();
-  scriptCheck(value)
+$('.submit').on("click", function() {
+  let url = $('.input').val();
+  if (url.indexOf("https") != -1) {
+    var adjUrl = "http" + url.slice(5)
+    scriptCheck(adjUrl);
+  } else if (url.indexOf("http") != -1) {
+    scriptCheck(url);
+  } else {
+    var adjUrl = "http://" + url
+    scriptCheck(adjUrl)
+  }
 })
 
-$('form').submit(function (evt) {
-   evt.preventDefault(); //prevents the default action
+$('form').submit(function(evt) {
+  evt.preventDefault(); //prevents the default action
 });
 
-function scriptCheck (url) {
+function scriptCheck(url) {
   axios.post('https://powerful-island-56445.herokuapp.com/single-domain/', {
-  domain: url
-})
-.then(function (response) {
-  return responseHandler(response);
-  })
+      domain: url
+    })
+    .then(function(response) {
+      return responseHandler(response);
+    })
 }
 
-function responseHandler (response) {
-  var data                = response.data;
-  results.site            = data.site;
-  results.actOn           = data.actOn;
+function responseHandler(response) {
+  var data = response.data;
+  results.site = data.site;
+  results.actOn = data.actOn;
   results.clickDimensions = data.clickDimensions;
-  results.google          = data.google;
-  results.marketo         = data.marketo;
-  results.pardot          = data.pardot;
-  results.sf              = data.sf;
-  results.hubspot         = data.hubspot;
+  results.google = data.google;
+  results.marketo = data.marketo;
+  results.pardot = data.pardot;
+  results.sf = data.sf;
+  results.hubspot = data.hubspot;
   $('.results-cont').html(htmlTemplate())
   checkTf();
 }
 
-function checkTf () {
- $('.tf').each(function (){
-   if($(this).text() == 'true') {
-     $(this).addClass('true')
-   }else{
-     $(this).addClass('false')
-   }
- })
+function checkTf() {
+  $('.tf').each(function() {
+    if ($(this).text() == 'true') {
+      $(this).addClass('true')
+    } else {
+      $(this).addClass('false')
+    }
+  })
 }
 
-function htmlTemplate () {
+function htmlTemplate() {
   return `
     <div class="results">
     <p class="title is-4">Website: ${results.site}</p>
@@ -85,14 +91,14 @@ function htmlTemplate () {
 
 // FAQ activation
 
-$('.faq').on("click", function () {
+$('.faq').on("click", function() {
   $('.modal').addClass("is-active");
 })
 
-$('.modal-background').on("click", function () {
+$('.modal-background').on("click", function() {
   $('.modal').removeClass("is-active");
 })
 
-$('.delete').on("click", function () {
+$('.delete').on("click", function() {
   $('.modal').removeClass("is-active");
 })
