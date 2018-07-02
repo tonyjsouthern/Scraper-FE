@@ -6,7 +6,8 @@ let results = {
   marketo: '',
   pardot: '',
   sf: '',
-  hubspot: ''
+  hubspot: '',
+  googleTag: '',
 }
 
 $('.submit').on("click", function() {
@@ -45,6 +46,7 @@ function responseHandler(response) {
   results.pardot = data.pardot;
   results.sf = data.sf;
   results.hubspot = data.hubspot;
+  results.googleTag = data.googleTag;
   $('.results-cont').html(htmlTemplate())
   checkTf();
 }
@@ -71,6 +73,7 @@ function htmlTemplate() {
       <p class="margin-bot"><span class="is-bold">Pardot:</span></p>
       <p class="margin-bot"><span class="is-bold">Salesfusion:</span></p>
       <p class="margin-bot"><span class="is-bold">Hubspot:</span></p>
+      <p class="margin-bot"><span class="is-bold">Injectors:</span></p>
     </div>
 
     <div class="values-cont">
@@ -81,13 +84,14 @@ function htmlTemplate() {
       <p class="tf">${results.pardot}</p>
       <p class="tf">${results.sf}</p>
       <p class="tf">${results.hubspot}</p>
+      <p class="tf">${results.googleTag}</p>
     </div>
+
+    <p class="margin-top"><span class="bold">NOTE:</span> If injectors is true script read-outs may default to a false value. This indicates the customer is using a script injector such as Google Tag Manger. If this is the case we cannot accurately determine what scrupts the website is running.</p>
 
     </div>
   `
 }
-// http://iheartcamo.com
-
 
 // FAQ activation
 
